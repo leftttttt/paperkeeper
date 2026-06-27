@@ -1,0 +1,18 @@
+body{
+    background-color: #e7ecef;
+}
+
+.title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #274c77;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25ddpx;
+    border-bottom-style: solid;
+}
