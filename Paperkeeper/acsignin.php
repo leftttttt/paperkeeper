@@ -6,7 +6,7 @@
      href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width"/>
-    <title>sign in</title>
+    <title>Choose your account - Sign In</title>
 </head>
 
 <body>
@@ -16,14 +16,14 @@
         <a href="index.php">
         <button type="button">Back to home page</button>
         </a>
-    </div>
+            </div>
     <div class="title">
-        <h1>Please sign in</h1>
+        <h1>Choose your account -  sign in</h1>
     </div>
 
     </div>
 
-    <div class="info">
+    <div class="acinfo">
 
         <div class="email">
             <label for="email">Email:</label>
@@ -40,12 +40,11 @@
             <label for="remember">Remember me</label>
         </div>
 <br><br>
-            <button class="signin" type="button" onclick="location.href='userinfo.php'">
+            <button class="signin" type="button" onclick="location.href='create.php'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">Sign In</span>
             </button>
-        </div>
     </div>
 </body>
 </html>

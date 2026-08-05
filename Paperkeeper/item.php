@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width"/>
     <title>Item Detail</title>
@@ -12,7 +14,7 @@
         
         <div class="user-icon">
             <a href="signup.php">
-        <img src="images/user.jpg" alt="the user icon" width="30" height="30">
+        <img src="images/user.png" alt="the user icon" width="45" height="45">
         </a>
         </div>
 
@@ -24,7 +26,6 @@
 
     <a href="index.php">
     <button type="button">Back to home page</button>
-    </button>
     </a>
 
     <div class="item-image">
@@ -37,19 +38,16 @@
         <p>Category: </p>
         <p>Time you get: </p>
         <p>due date: </p>
-    </div>
 
+<br>
     <div class="buttons">
-        <div class="edit">
-            <a href="edititem.php">
-            <button type="button">Edit</button>
-            </a>
-        </div>
+            <button class="edit" type="button" onclick="location.href='edititem.php'">
+                <span>Edit</span>
+            </button>
         
-        <div class="delete">
-            <a href="index.php">
-            <button type="button">Delete</button>
-            </a>
+            <button class="delete" type="button" onclick="location.href='index.php'">
+                <span>Delete</span>
+            </button>
         </div>
     </div>
 </div>

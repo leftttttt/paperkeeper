@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
+     href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width"/>
-    
-    <title>sign up</title>
+    <title>Choose your account - Sign Up</title>
 </head>
-
+<body>
 <div class="navbar">
     <div class="back">
         <a href="index.php">
@@ -17,13 +16,12 @@
         </a>
     </div>
 
-<body>
     <div class="title">
-    <h1>Please sign up</h1>
+    <h1>Choose your account - Sign Up</h1>
     </div>
     </div>
 
-    <div class="info">
+    <div class="acinfo">
     <div class="email">
         <label for="email">Email:</label>
         <input type="email" placeholder="Enter email" id="email" name="email">
@@ -44,21 +42,19 @@
         <input type="password" placeholder="Repeat password" id="repassword" name="repassword">
     </div>
 <br><br>
-
-    <p style="display:inline-block;margin:0;">Already have an account?</p>
+ <p style="display:inline-block;margin:0;">Already have an account?</p>
     <div class="l-signin" style="display:inline-block;vertical-align:middle;">
         <!--link sign in-->
     <a href="signin.php">
         <p>Sign In</p>
     </a>
-</div>
+    </div>
 
-            <button class="signup" type="button" onclick="location.href='userinfo.php'">
+            <button class="signup" type="button" onclick="location.href='create.php'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">Sign Up</span>
             </button>
-
     </div>
 </body>
 </html>

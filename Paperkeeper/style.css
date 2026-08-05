@@ -3,7 +3,9 @@ body{
 }
 
 .title{
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
     color: #274c77;
@@ -13,6 +15,210 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 25ddpx;
+    padding: 45px 25px 45px;
     border-bottom-style: solid;
+    border-bottom-width:3px;
+    border-bottom-color: #274c77;
+}
+
+.info{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.acinfo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.userinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.edit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.buttons{
+    display:flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.edit, .save{
+    outline: none;
+    color: #ffffff;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    border: 2px dashed #14547e;
+    border-radius: 15px;
+    background-color: #6096ba;
+    box-shadow: 0 0 0 4px #6096ba, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    transition: .1s ease-in-out, .4s color;
+}
+
+.cancel, .delete{
+    outline: none;
+    color: #ffffff;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    border: 2px dashed #74a7e2;
+    border-radius: 15px;
+    background-color: #274c77;
+    box-shadow: 0 0 0 4px #274c77, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    transition: .1s ease-in-out, .4s color;
+}
+
+.edit:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #14547e, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.cancel:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #74a7e2, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.save:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #14547e, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.delete:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #74a7e2, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.signin, .signup, .signout {
+    font-size: 20px;
+    padding: 1em 2.7em;
+    font-weight: 600;
+    background: #274c77;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.label {
+  position: relative;
+  top: -1px;
+}
+
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: #6096ba;
+  border-radius: 9999px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signin:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+.signin:active {
+  transform: scale(0.97);
+}
+
+.signup:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+.signup:active {
+  transform: scale(0.97);
+}
+
+.signout:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+.signout:active {
+  transform: scale(0.97);
+}
+
+.image{
+    display: flex;
+    justify-content: left;
+}
+
+#upload-img {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.image label img {
+    cursor: pointer;
+}
+
+.image {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap:75px;
+}
+
+.info.add-item-form {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 80px;
 }
