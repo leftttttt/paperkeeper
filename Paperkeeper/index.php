@@ -12,6 +12,7 @@
 
 <body>
     <div class="navbar">
+        <div class="leftside">
         <div class="user-icon">
             <a href="userinfo.php">
         <img src="images/user.png" alt="the user icon" width="45" height="45">
@@ -20,34 +21,33 @@
         </div>
 
         <div class="headerbuttons">
-            <button type="button" onclick="location.href='index.php'">Home</button>
             <button type="button" onclick="location.href='signin.php'">Sign In</button>
             <button type="button" onclick="location.href='signup.php'">Sign Up</button>
         </div>
+    </div>
 
         <div class="title">
             <h1>Item</h1>
         </div>
 
         <div class="function-box">
-            <div class="search">
-            <form class="search" action="action_page.php">
+            <form class="search" method="get" action="search.php">
+                <div class="searchbox">
                 <input type="text" placeholder="search..." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-
             </div>
 
             <div class="filter">
-                <select>
-                    <option>physics</option>
-                    <option>math</option>
-                    <option>english</option>
-                    <option>chinese</option>
-                    <option>digi tech</option>
+                <select name="subject">
+                    <option value="">Choose Subject</option>
+                    <option value="physics">physics</option>
+                    <option value="math">math</option>
+                    <option value="english">english</option>
+                    <option value="chinese">chinese</option>
+                    <option value="digi tech">digi tech</option>
                 </select>
-
             </div>
+            </form>
         </div>
 
 

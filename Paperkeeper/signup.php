@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
+     href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width"/>
     
@@ -28,7 +28,7 @@
         <label for="email">Email:</label>
         <input type="email" placeholder="Enter email" id="email" name="email">
     </div>
-<br><br>
+<br><br><br><br>
     <div class="username">
         <label for="username">Username:</label>
         <input type="text" placeholder="Enter username" id="username" name="username">

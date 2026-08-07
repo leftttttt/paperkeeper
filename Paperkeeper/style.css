@@ -21,6 +21,44 @@ body{
     border-bottom-color: #274c77;
 }
 
+.search {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #2b4470;
+    border-radius:10px;
+    margin-right: 70px;
+}
+
+.searchbox {
+    display:flex;
+    padding:12px;
+    border-bottom:5px solid #2b4470;
+}
+
+.filter {
+    padding:12px;
+}
+
+.searchbox input{
+    flex-grow:1;
+    border:none;
+    outline:none;
+}
+
+.filter select{
+    width:100%;
+    border:none;
+    outline:none;
+}
+
+.searchbox button {
+    background-color: #2b4470; 
+    color: white; 
+    cursor: pointer;
+}
+
+
+
 .info{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
@@ -69,7 +107,26 @@ body{
     display:flex;
     gap: 25px;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: left;
+}
+
+.user-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #274c77;
+}
+
+.headerbuttons{
+    display:flex;
+    gap: 25px;
+    margin-left: 25px;
+}
+
+.leftside{
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .edit, .save{
