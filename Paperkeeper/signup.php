@@ -13,7 +13,9 @@
 <div class="navbar">
     <div class="back">
         <a href="index.php">
-        <button type="button">Back to home page</button>
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
         </a>
     </div>
 
@@ -25,27 +27,27 @@
 
     <div class="info">
     <div class="email">
-        <label for="email">Email:</label>
-        <input type="email" placeholder="Enter email" id="email" name="email">
+        <label for="email" style="color: #274c77;">Email:</label>
+        <input type="email" class="input" placeholder="Enter email" id="email" name="email">
     </div>
-<br><br><br><br>
+<br><br>
     <div class="username">
-        <label for="username">Username:</label>
-        <input type="text" placeholder="Enter username" id="username" name="username">
+        <label for="username" style="color: #274c77;">Username:</label>
+        <input type="text" class="input" placeholder="Enter username" id="username" name="username">
     </div>
 <br><br>
     <div class="password">
-        <label for="password">Password:</label>
-        <input type="password" placeholder="Enter password" id="password" name="password">
+        <label for="password" style="color: #274c77;">Password:</label>
+        <input type="password" class="input" placeholder="Enter password" id="password" name="password">
     </div>
 <br><br>
     <div class="repassword">
-        <label for="repassword">Repeat Password:</label>
-        <input type="password" placeholder="Repeat password" id="repassword" name="repassword">
+        <label for="repassword" style="color: #274c77;">Repeat Password:</label>
+        <input type="password" class="input" placeholder="Repeat password" id="repassword" name="repassword">
     </div>
 <br><br>
 
-    <p style="display:inline-block;margin:0;">Already have an account?</p>
+    <p style="display:inline-block;margin:0; color: #274c77;">Already have an account?</p>
     <div class="l-signin" style="display:inline-block;vertical-align:middle;">
         <!--link sign in-->
     <a href="signin.php">

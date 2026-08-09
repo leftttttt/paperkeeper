@@ -11,12 +11,12 @@
 
 <body>
     <div class="navbar">
-        
-        <div class="user-icon">
-            <a href="signup.php">
-        <img src="images/user.png" alt="the user icon" width="45" height="45">
+        <a href="index.php">
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
         </a>
-        </div>
+
 
 
         <div class="title">
@@ -24,9 +24,7 @@
         </div>
     </div>
 
-    <a href="index.php">
-    <button type="button">Back to home page</button>
-    </a>
+
 
     <div class="item-image">
         <img src="images/item.jpg" alt="the item image" width="200" height="200">
@@ -42,11 +40,11 @@
 <br>
     <div class="buttons">
             <button class="edit" type="button" onclick="location.href='edititem.php'">
-                <span>Edit</span>
+                Edit
             </button>
         
             <button class="delete" type="button" onclick="location.href='index.php'">
-                <span>Delete</span>
+                Delete
             </button>
         </div>
     </div>

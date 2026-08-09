@@ -11,13 +11,13 @@
 
 <body>
     <div class="navbar">
-        
-        <div class="user-icon">
-            <a href="signup.php">
-        <img src="images/user.png" alt="the user icon" width="50" height="50">
-        </a>
+        <div class="back">
+            <a href="index.php">
+            <button class="home" type="button">
+                <span>Home</span>
+            </button>
+            </a>
         </div>
-
 
         <div class="title">
             <h1>Create Item</h1>
@@ -66,17 +66,14 @@
 <br>
 <br>
         <div class="buttons">
-            <div class="save">
-                <a href="index.php">
-                <button type="button">Save</button>
-                </a>
-            </div>
 
-            <div class="cancel">
-                <a href="index.php">
-                <button type="button">Cancel</button>
-                </a>
-            </div>
+        <button class="save" type="button" onclick="location.href='index.php'">
+            Save
+        </button>
+
+        <button class="cancel" type="button" onclick="location.href='index.php'">
+            Cancel
+        </button>
         </div>
 </body>
 </html>

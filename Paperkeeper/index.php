@@ -21,8 +21,8 @@
         </div>
 
         <div class="headerbuttons">
-            <button type="button" onclick="location.href='signin.php'">Sign In</button>
-            <button type="button" onclick="location.href='signup.php'">Sign Up</button>
+            <button class="signinbtn" type="button" onclick="location.href='signin.php'">Sign In</button>
+            <button class="signupbtn" type="button" onclick="location.href='signup.php'">Sign Up</button>
         </div>
     </div>
 
@@ -60,14 +60,13 @@
     <div class="choose">
         <a href="accountchoose.php"><button type="button">Create</button></a>
     </div>
-    <div class="create">
-        <a href="create.php">
-        <button type="button">Create</button>
-        </a>
-    </div>
 
+<button class="create" type="button" onclick="location.href='create.php'" >
+  <div class="sign">+</div>
+  <div class="text">Create</div>
+</button>
+    
 <a href="item.php">1</a>
-
     
 </body>
 <footer>

@@ -14,7 +14,9 @@
     <div class="navbar">
             <div class="back">
         <a href="index.php">
-        <button type="button">Back to home page</button>
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
         </a>
     </div>
     <div class="title">
@@ -26,18 +28,18 @@
     <div class="info">
 
         <div class="email">
-            <label for="email">Email:</label>
-            <input type="email" placeholder="Enter email" id="email" name="email">
+            <label for="email" style="color: #274c77;">Email:</label>
+            <input type="email" class="input" placeholder="Enter email" id="email" name="email">
         </div>
 <br><br>
         <div class="password">
-            <label for="password">Password:</label>
-            <input type="password" placeholder="Enter password" id="password" name="password">
+            <label for="password" style="color: #274c77;">Password:</label>
+            <input type="password" class="input" placeholder="Enter password" id="password" name="password">
         </div>
 <br><br>
         <div class="remember">
             <input type="checkbox" id="remember" name="remember">
-            <label for="remember">Remember me</label>
+            <label for="remember" style="color: #274c77;">Remember me</label>
         </div>
 <br><br>
             <button class="signin" type="button" onclick="location.href='userinfo.php'">

@@ -11,14 +11,14 @@
 
 <body>
     <div class="navbar">
-        
-        <div class="user-icon">
-            <a href="signup.php">
-        <img src="images/user.png" alt="the user icon" width="45" height="45">
+    <div class="back">
+        <a href="index.php">
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
         </a>
-        </div>
-
-
+    </div>
+    
         <div class="title">
             <h1>Edit Item</h1>
         </div>

@@ -24,7 +24,7 @@ body{
 .search {
     display: flex;
     flex-direction: column;
-    border: 5px solid #2b4470;
+    border: 5px solid #274c77;
     border-radius:10px;
     margin-right: 70px;
 }
@@ -32,7 +32,7 @@ body{
 .searchbox {
     display:flex;
     padding:12px;
-    border-bottom:5px solid #2b4470;
+    border-bottom:5px solid #274c77;
 }
 
 .filter {
@@ -52,12 +52,50 @@ body{
 }
 
 .searchbox button {
-    background-color: #2b4470; 
+    background-color: #274c77; 
     color: white; 
     cursor: pointer;
 }
 
+.home {
+ display: inline-block;
+ border-radius: 4px;
+ background-color: #274c77;
+ border: none;
+ color: #FFFFFF;
+ text-align: center;
+ font-size: 17px;
+ padding: 16px;
+ width: 130px;
+ transition: all 0.5s;
+ cursor: pointer;
+ margin: 5px;
+}
 
+.home span {
+ cursor: pointer;
+ display: inline-block;
+ position: relative;
+ transition: 0.5s;
+}
+
+.home span:after {
+ content: '»';
+ position: absolute;
+ opacity: 0;
+ top: 0;
+ right: -15px;
+ transition: 0.5s;
+}
+
+.home:hover span {
+ padding-right: 15px;
+}
+
+.home:hover span:after {
+ opacity: 1;
+ right: 0;
+}
 
 .info{
     font-family: 'Roboto Slab', serif;
@@ -103,11 +141,19 @@ body{
     margin-top: 50px;
 }
 
+.edit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 .buttons{
     display:flex;
     gap: 25px;
     align-items: flex-start;
-    justify-content: left;
+    justify-content: center;
 }
 
 .user-icon {
@@ -123,6 +169,30 @@ body{
     margin-left: 25px;
 }
 
+.signinbtn, .signupbtn {
+    width: fit-content;
+    min-width: 100px;
+    height: 45px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2.5px solid #274c77;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: #e7ecef;
+    transition: all 0.2s ease-in-out 0ms;
+    font-size: 16px;
+    color: #274c77;
+}
+
+.signinbtn:hover, .signupbtn:hover {
+  background-color: #F2F2F2;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.signinbtn:active, .signupbtn:active {
+  transform: scale(0.95);
+}
+
 .leftside{
     display: flex;
     align-items: center;
@@ -132,9 +202,10 @@ body{
 .edit, .save{
     outline: none;
     color: #ffffff;
-    padding: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
+    font-size: 20px;
+    width: 200px;
+    padding: 18px 0;
+    text-align: center;
     border: 2px dashed #14547e;
     border-radius: 15px;
     background-color: #6096ba;
@@ -145,9 +216,10 @@ body{
 .cancel, .delete{
     outline: none;
     color: #ffffff;
-    padding: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
+    font-size: 20px;
+    width: 200px;
+    padding: 18px 0;
+    text-align: center;
     border: 2px dashed #74a7e2;
     border-radius: 15px;
     background-color: #274c77;
@@ -177,7 +249,9 @@ body{
 
 .signin, .signup, .signout {
     font-size: 20px;
-    padding: 1em 2.7em;
+    width: 200px;
+    padding: 18px 0;
+    text-align: center;
     font-weight: 600;
     background: #274c77;
     color: white;
@@ -278,4 +352,81 @@ body{
     align-items: flex-start;
     justify-content: space-evenly;
     gap: 80px;
+}
+
+
+
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border-radius: calc(45px/2);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background: #274c77;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  font-size: 2.2em;
+  color: white;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 500;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.create:hover {
+  width: 125px;
+  transition-duration: .3s;
+}
+
+.create:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+}
+/* hover effect button's text */
+.create:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.create:active {
+  transform: translate(2px ,2px);
+}
+
+
+.input {
+  max-width: 190px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #274c77;
+  border-radius: 0.5rem;
+  box-shadow: 2.5px 3px 0 #274c77;
+  outline: none;
+  transition: ease 0.25s;
+}
+
+.input:focus {
+  box-shadow: 5.5px 7px 0 #274c77;
 }

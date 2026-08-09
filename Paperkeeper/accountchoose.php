@@ -14,7 +14,9 @@
 <div class="navbar">
     <div class="back">
         <a href="index.php">
-        <button type="button">Back to home page</button>
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
         </a>
     </div>
 

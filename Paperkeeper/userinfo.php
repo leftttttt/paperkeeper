@@ -11,17 +11,17 @@
 <body>
 
 <div class="navbar">
-
+    <div class="back">
+        <a href="index.php">
+        <button class="home" type="button">
+            <span>Home</span>
+        </button>
+        </a>
+    </div>
 
         <div class="title">
             <h1>User Information</h1>
         </div>
-
-    <div class="back">
-        <a href="index.php">
-        <button type="button">Back to home page</button>
-        </a>
-    </div>
     </div>
     
     <div class="userinfo">
