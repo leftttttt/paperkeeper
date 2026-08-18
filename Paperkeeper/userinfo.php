@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["loggedin"]))
+{
+    header("location: signin.php");
+    exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +37,10 @@
     </div>
     
     <div class="userinfo">
-        <p>User Name: </p>
-        <p>Email: </p>
+        <p>User Name: <?php echo htmlspecialchars($_SESSION["username"]); ?></p>
+        <br>
+        <p>Email: <?php echo htmlspecialchars($_SESSION["email"]); ?></p>
+        <br>
         Year:
             <select>
                     <option>Year 1</option>
@@ -64,7 +78,7 @@
 
                 <br><br>
 
-            <button class="signout" type="button" onclick="location.href='userinfo.php'">
+            <button class="signout" type="button" onclick="location.href='signout.php'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">Sign Out</span>

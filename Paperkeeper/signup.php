@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(isset($_SESSION["loggedin"])&&$_SESSION["loggedin"] === true){
+    header("location:userinfo.php");
+    exit;
+}
+
 require_once "config.php";
 
 $email = $username = $password = $repassword = $param_email = $param_password = "";
@@ -103,13 +110,18 @@ if(empty(trim($_POST["username"]))){
             
  
             if(mysqli_stmt_execute($stmt)){
+                    $new_user_id = mysqli_insert_id($link);
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["id"] = $new_user_id;
+                    $_SESSION["username"] = $username;
+                    $_SESSION["email"] = $email;
 
                 header("location: userinfo.php");
+                exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
 
-            // Close statement
             mysqli_stmt_close($stmt);
         }
     }
@@ -119,8 +131,6 @@ if(empty(trim($_POST["username"]))){
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -167,20 +177,19 @@ if(empty(trim($_POST["username"]))){
 <br><br>
     <div class="password">
         <label for="password" style="color: #274c77;">Password:</label>
-        <input type="password" class="input" placeholder="Enter password" id="password" name="password" value="<?php echo $password; ?>">
+        <input type="password" class="input" placeholder="Enter password" id="password" name="password">
         <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $password_err; ?></span>
     </div>
 <br><br>
     <div class="repassword">
         <label for="repassword" style="color: #274c77;">Repeat Password:</label>
-        <input type="password" class="input" placeholder="Repeat password" id="repassword" name="repassword" value="<?php echo $repassword; ?>">
+        <input type="password" class="input" placeholder="Repeat password" id="repassword" name="repassword">
         <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $repassword_err; ?></span>
     </div>
 <br><br>
 
     <p style="display:inline-block;margin:0; color: #274c77;">Already have an account?</p>
     <div class="l-signin" style="display:inline-block;vertical-align:middle;">
-        <!--link sign in-->
     <a href="signin.php">
         <p>Sign In</p>
     </a>
