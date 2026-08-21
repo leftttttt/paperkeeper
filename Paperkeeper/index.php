@@ -57,11 +57,9 @@
 
     </div>
 
-    <div class="choose">
-        <a href="accountchoose.php"><button type="button">Create</button></a>
-    </div>
 
-<button class="create" type="button" onclick="location.href='create.php'" >
+
+<button class="create" type="button" onclick="location.href='accountchoose.php'" >
   <div class="sign">+</div>
   <div class="text">Create</div>
 </button>

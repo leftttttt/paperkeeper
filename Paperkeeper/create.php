@@ -31,14 +31,14 @@
         </label>
         
         <input id="upload-img" type="file" accept="image/png, image/jpeg">
-    <p>Add icon/picture</p>
-    </div>
+        <p>Add icon/picture</p>
+        </div>
 
     <div class="edit-item">
-        <label for="item-name">Item Name:</label>
+        <label for="item-name">Item Name</label>
         <input type="text" id="item-name" name="item-name" placeholder="Enter item name">
 <br>
-        <label for="subject">Subject:</label>
+        <label for="subject">Subject</label>
         <select id="subject" name="subject">
             <option value="physics">Physics</option>
             <option value="math">Math</option>
@@ -47,7 +47,7 @@
             <option value="digi tech">Digi Tech</option>
         </select>
 <br>
-        <label for="category">Category:</label>
+        <label for="category">Category</label>
         <select id="category" name="category">
             <option value="homework">Homework</option>
             <option value="quiz">Quiz</option>
@@ -55,18 +55,18 @@
             <option value="note">Note</option>
         </select>
 <br>
-        <label for="time-get">Time You Get:</label>
+        <label for="time-get">Time You Get</label>
         <input type="datetime-local" id="time-get" name="time-get">
 <br>
-        <label for="due-date">Due Date:</label>
+        <label for="due-date">Due Date</label>
         <input type="datetime-local" id="due-date" name="due-date">
 <br>
     </div>
             </div>
 <br>
 <br>
-        <div class="buttons">
 
+        <div class="buttons">
         <button class="save" type="button" onclick="location.href='index.php'">
             Save
         </button>

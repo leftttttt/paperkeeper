@@ -93,16 +93,13 @@ if(empty($email_err) && empty($password_err)){
     </div>
     </div>
 
-<?php 
+        <?php 
         if(!empty($signin_err)){
             echo '<div class="alert alert-danger">' . $signin_err . '</div>';
         }        
         ?>
-
-
-
-
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        
+    <form method="post">
     <div class="info">
 
         <div class="email">
@@ -123,6 +120,7 @@ if(empty($email_err) && empty($password_err)){
                 <span class="label">Sign In</span>
             </button>
         </div>
+        </form>
     </div>
 </body>
 </html>

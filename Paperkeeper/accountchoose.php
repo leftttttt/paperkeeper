@@ -1,3 +1,14 @@
+<?php
+session_start();
+require_once "config.php";
+
+// 如果已经登录，直接跳添加物品页
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: create.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

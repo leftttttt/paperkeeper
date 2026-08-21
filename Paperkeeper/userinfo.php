@@ -69,11 +69,10 @@ if(!isset($_SESSION["loggedin"]))
 <br><br>
     Set Category:
         <select>
-                    <option>physics</option>
-                    <option>math</option>
-                    <option>english</option>
-                    <option>chinese</option>
-                    <option>digi tech</option>
+                    <option>worksheet</option>
+                    <option>test</option>
+                    <option>information</option>
+                    <option>other</option>
                 </select>
 
                 <br><br>

@@ -142,12 +142,20 @@ body{
     margin-top: 50px;
 }
 
-.edit-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+.edit-item input{
+    width: 260px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #274c77;
+    border-radius: 4px;
+}
+
+.edit-item select{
+    width: 285px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #274c77;
+    border-radius: 4px;
 }
 
 .buttons{
@@ -325,7 +333,10 @@ body{
 
 .image{
     display: flex;
-    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 10px;
 }
 
 #upload-img {
@@ -341,11 +352,10 @@ body{
     cursor: pointer;
 }
 
-.image {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    gap:75px;
+.image p{
+    font-size: 25px;
+    color: #274c77;
+    text-align: center;
 }
 
 .info.add-item-form {
@@ -373,7 +383,6 @@ body{
   background: #274c77;
 }
 
-/* plus sign */
 .sign {
   width: 100%;
   font-size: 2.2em;
@@ -383,7 +392,7 @@ body{
   align-items: center;
   justify-content: center;
 }
-/* text */
+
 .text {
   position: absolute;
   right: 0%;
@@ -394,7 +403,7 @@ body{
   font-weight: 500;
   transition-duration: .3s;
 }
-/* hover effect on button width */
+
 .create:hover {
   width: 125px;
   transition-duration: .3s;
@@ -404,14 +413,14 @@ body{
   width: 30%;
   transition-duration: .3s;
 }
-/* hover effect button's text */
+
 .create:hover .text {
   opacity: 1;
   width: 70%;
   transition-duration: .3s;
   padding-right: 10px;
 }
-/* button click effect*/
+
 .create:active {
   transform: translate(2px ,2px);
 }

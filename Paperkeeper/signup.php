@@ -158,7 +158,7 @@ if(empty(trim($_POST["username"]))){
     </div>
     </div>
 
-    <form method="POST" action="signup.php">
+    <form method="POST">
 
 
 
