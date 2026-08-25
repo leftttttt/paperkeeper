@@ -126,7 +126,6 @@ if(empty(trim($_POST["username"]))){
         }
     }
     
-    // Close connection
     mysqli_close($link);
 }
 
