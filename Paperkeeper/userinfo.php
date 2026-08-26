@@ -58,25 +58,6 @@ if(!isset($_SESSION["loggedin"]))
                     <option>Year 13</option>
             </select>
 <br><br>
-        Set Subject:
-        <select>
-            <option>physics</option>
-            <option>math</option>
-            <option>english</option>
-            <option>chinese</option>
-            <option>digi tech</option>
-        </select>
-<br><br>
-    Set Category:
-        <select>
-                    <option>worksheet</option>
-                    <option>test</option>
-                    <option>information</option>
-                    <option>other</option>
-                </select>
-
-                <br><br>
-
             <button class="signout" type="button" onclick="location.href='signout.php'">
                 <span class="transition"></span>
                 <span class="gradient"></span>

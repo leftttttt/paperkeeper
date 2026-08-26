@@ -112,7 +112,7 @@ if(empty(trim($_POST["username"]))){
             if(mysqli_stmt_execute($stmt)){
                     $new_user_id = mysqli_insert_id($link);
                     $_SESSION["loggedin"] = true;
-                    $_SESSION["id"] = $new_user_id;
+                    $_SESSION["user_id"] = $new_user_id;
                     $_SESSION["username"] = $username;
                     $_SESSION["email"] = $email;
 

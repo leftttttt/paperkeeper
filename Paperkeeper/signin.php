@@ -42,7 +42,7 @@ if(empty($email_err) && empty($password_err)){
                 if(password_verify($password, $hashed_password)){
 
                 $_SESSION["loggedin"] = true;
-                $_SESSION["id"] = $id;
+                $_SESSION["user_id"] = $id;
                 $_SESSION["email"] = $email;
                 $_SESSION["username"] = $username;
 
