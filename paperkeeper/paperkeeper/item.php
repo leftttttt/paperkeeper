@@ -1,17 +1,17 @@
 <?php
 
-if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     require_once "config.php";
 
-    $sql = "SELECT * FROM item WHERE id = ?";
-    if($stmt = mysqli_prepare($link, $sql)){
-    mysqli_stmt_bind_param($stmt, "i", $param_id);
+    $sql = "SELECT * FROM item WHERE ID = ?";
+    if ($stmt = mysqli_prepare($link, $sql)) {
+        mysqli_stmt_bind_param($stmt, "i", $param_id);
 
-    $param_id = trim($_GET["id"]);
+        $param_id = trim($_GET["id"]);
 
-    if(mysqli_stmt_execute($stmt)){
+        if (mysqli_stmt_execute($stmt)) {
             $result = mysqli_stmt_get_result($stmt);
-            if(mysqli_num_rows($result) == 1){
+            if (mysqli_num_rows($result) == 1) {
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                 $name = $row["name"];
@@ -19,43 +19,43 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $category = $row["category"];
                 $get_date = $row["get_date"];
                 $due_date = $row["due_date"];
-                } else{
+            } else {
                 header("location: index.php");
                 exit();
-}
-        } else{
+            }
+        } else {
             echo "Oops! Something went wrong. Please try again later.";
         }
-        }
-     
-        // Close statement
-        mysqli_stmt_close($stmt);
-    
-        // Close connection
-        mysqli_close($link);
-        }else{
-        header("location: index.php");
-        exit();
+    }
+
+    // Close statement
+    mysqli_stmt_close($stmt);
+
+    // Close connection
+    mysqli_close($link);
+} else {
+    header("location: index.php");
+    exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab">
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>Item Detail</title>
 </head>
 
 <body>
     <div class="navbar">
         <a href="index.php">
-        <button class="home" type="button">
-            <span>Home</span>
-        </button>
+            <button class="home" type="button">
+                <span>Home</span>
+            </button>
         </a>
 
 
@@ -72,16 +72,17 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         <p>Time you get: <?php echo $row["get_date"]; ?></p>
         <p>due date: <?php echo $row["due_date"]; ?></p>
 
-<br>
-    <div class="buttons">
+        <br>
+        <div class="buttons">
             <button class="edit" type="button" onclick="location.href='edititem.php'">
                 Edit
             </button>
-        
+
             <button class="delete" type="button" onclick="location.href='index.php'">
                 Delete
             </button>
         </div>
     </div>
 </body>
+
 </html>
