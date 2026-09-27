@@ -21,7 +21,7 @@ if (!isset($_SESSION["loggedin"])) {
 </head>
 
 <body>
-
+<header>
     <div class="navbar">
         <div class="back">
             <a href="index.php">
@@ -35,6 +35,7 @@ if (!isset($_SESSION["loggedin"])) {
             <h1>User Information</h1>
         </div>
     </div>
+    </header>
 
     <div class="userinfo">
         <p>User Name: <?php echo htmlspecialchars($_SESSION["username"]); ?></p>

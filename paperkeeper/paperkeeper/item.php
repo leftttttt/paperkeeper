@@ -1,39 +1,52 @@
 <?php
-
-if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
+// Check existence of id parameter before processing further
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    // Include config file
     require_once "config.php";
-
-    $sql = "SELECT * FROM item WHERE ID = ?";
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    
+    // Prepare a select statement
+    $sql = "SELECT * FROM item WHERE id = ?";
+    
+    if($stmt = mysqli_prepare($link, $sql)){
+        // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_id);
-
+        
+        // Set parameters
         $param_id = trim($_GET["id"]);
-
-        if (mysqli_stmt_execute($stmt)) {
+        
+        // Attempt to execute the prepared statement
+        if(mysqli_stmt_execute($stmt)){
             $result = mysqli_stmt_get_result($stmt);
-            if (mysqli_num_rows($result) == 1) {
+    
+            if(mysqli_num_rows($result) == 1){
+                /* Fetch result row as an associative array. Since the result set
+                contains only one row, we don't need to use while loop */
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
+                
+                // Retrieve individual field value
                 $name = $row["name"];
                 $subject = $row["subject"];
                 $category = $row["category"];
                 $get_date = $row["get_date"];
                 $due_date = $row["due_date"];
-            } else {
+            } else{
+                // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: index.php");
                 exit();
             }
-        } else {
+            
+        } else{
             echo "Oops! Something went wrong. Please try again later.";
         }
     }
-
+     
     // Close statement
     mysqli_stmt_close($stmt);
-
+    
     // Close connection
     mysqli_close($link);
-} else {
+} else{
+    // URL doesn't contain id parameter. Redirect to error page
     header("location: index.php");
     exit();
 }
@@ -51,6 +64,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 </head>
 
 <body>
+    <header>
     <div class="navbar">
         <a href="index.php">
             <button class="home" type="button">
@@ -58,12 +72,11 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
             </button>
         </a>
 
-
-
         <div class="title">
             <h1>Item Detail</h1>
         </div>
     </div>
+</header>
 
     <div class="item-info">
         <p>Item: <?php echo $row["name"]; ?></p>
@@ -74,13 +87,10 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 
         <br>
         <div class="buttons">
-            <button class="edit" type="button" onclick="location.href='edititem.php'">
-                Edit
-            </button>
+            <button class="edit" type="button" onclick="location.href='edititem.php?id=<?php echo $row['ID']; ?>'">Edit</button>
 
-            <button class="delete" type="button" onclick="location.href='index.php'">
-                Delete
-            </button>
+            <button class="delete" type="button" onclick="location.href='delete.php?id=<?php echo $row['ID']; ?>'">Delete</button>
+
         </div>
     </div>
 </body>

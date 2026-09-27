@@ -142,6 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <header>
     <div class="navbar">
         <div class="back">
             <a href="index.php">
@@ -155,6 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Choose your account - Sign Up</h1>
         </div>
     </div>
+    </header>
 
     <form method="POST">
         <div class="acinfo">

@@ -20,7 +20,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 </head>
 
 <body>
-
+<header>
     <div class="navbar">
         <div class="back">
             <a href="index.php">
@@ -34,7 +34,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             <h1>Please choose your account</h1>
         </div>
     </div>
-
+</header>
     <div class="info">
         <p>Choose which account you would like to use:</p>
 

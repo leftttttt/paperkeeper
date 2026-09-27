@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+<header>
     <div class="navbar">
         <div class="back">
             <a href="index.php">
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </div>
-
+</header>
     <?php
     if (!empty($signin_err)) {
         echo '<div class="alert alert-danger">' . $signin_err . '</div>';
