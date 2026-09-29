@@ -79,19 +79,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<header>
-    <div class="navbar">
-        <div class="back">
-            <a href="index.php">
-                <button class="home" type="button">
-                    <span>Home</span>
-                </button>
-            </a>
+    <header>
+        <div class="navbar">
+            <div class="back">
+                <a href="index.php">
+                    <button class="home" type="button">
+                        <span>Home</span>
+                    </button>
+                </a>
+            </div>
+            <div class="title">
+                <h1>Please sign in</h1>
+            </div>
         </div>
-        <div class="title">
-            <h1>Please sign in</h1>
-        </div>
-    </div>
     </header>
 
     <?php
@@ -116,6 +116,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $password_err; ?></span>
             </div>
             <br><br>
+            <p style="display:inline-block;margin:0; color: #274c77;">Create an account</p>
+            <div class="l-signin" style="display:inline-block;vertical-align:middle;">
+                <a href="signup.php">
+                    <p>Sign Up</p>
+                </a>
+            </div>
+
             <button class="signin" type="submit">
                 <span class="transition"></span>
                 <span class="gradient"></span>

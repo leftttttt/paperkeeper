@@ -44,16 +44,16 @@ session_start();
             </div>
 
             <div class="function-box">
-                    <div class="filter">
-                        <select name="subject">
-                            <option value="">Choose Subject</option>
-                            <option value="physics">physics</option>
-                            <option value="math">math</option>
-                            <option value="english">english</option>
-                            <option value="chinese">chinese</option>
-                            <option value="digi tech">digi tech</option>
-                        </select>
-                    </div>
+                <div class="filter">
+                    <select name="subject" id="subjectFilter" onchange="filterBySubject()">
+                        <option value="">Choose Subject</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Math">Math</option>
+                        <option value="English">English</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Digi Tech">Digi Tech</option>
+                    </select>
+                </div>
             </div>
 
 
@@ -76,14 +76,14 @@ session_start();
         $sql = "SELECT * FROM item WHERE user_id = $tempUID";
         if ($result = mysqli_query($link, $sql)) {
             if (mysqli_num_rows($result) > 0) {
-                echo '<table class="item-table">';
+                echo '<table id="myTable" class="item-table">';
                 echo "<thead>";
                 echo "<tr>";
-                echo "<th>Name</th>";
-                echo "<th>Subject</th>";
-                echo "<th>Category</th>";
-                echo "<th>Get date</th>";
-                echo "<th>Due date</th>";
+                echo "<th onclick=\"sortTable(0)\" >Name</th>";
+                echo "<th onclick=\"sortTable(1)\">Subject</th>";
+                echo "<th onclick=\"sortTable(2)\">Category</th>";
+                echo "<th onclick=\"sortTable(3)\">Get date</th>";
+                echo "<th onclick=\"sortTable(4)\">Due date</th>";
                 echo "</tr>";
                 echo "</thead>";
                 echo "<tbody>";
@@ -113,9 +113,84 @@ session_start();
         // Close connection
         mysqli_close($link);
         ?>
-
     </div>
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true;
+            //Set the sorting direction to ascending:
+            dir = "asc";
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+        function filterBySubject() {
+            var select, filterValue, table, tr, td, i, txtValue;
+            select = document.getElementById("subjectFilter");
+            filterValue = select.value;
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
 
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (filterValue === "" || txtValue === filterValue) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+    </script>
 </body>
 <footer>
 
