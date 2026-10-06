@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="info">
             <div class="email">
                 <label for="email" style="color: #274c77;">Email:</label>
-                <input type="email" class="input" placeholder="Enter email" id="email" name="email"
+                <input class="input" placeholder="Enter email" id="email" name="email"
                     value="<?php echo $email; ?>">
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $email_err; ?></span>
             </div>

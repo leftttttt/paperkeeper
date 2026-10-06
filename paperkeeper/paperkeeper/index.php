@@ -23,7 +23,7 @@ session_start();
                     <a href="userinfo.php">
                         <img src="images/user.png" alt="the user icon" width="45" height="45">
                     </a>
-                    <p>Personal Center</p>
+                    <p>Personal Centre</p>
                 </div>
 
                 <?php if (!isset($_SESSION["loggedin"])) { ?>
@@ -79,11 +79,11 @@ session_start();
                 echo '<table id="myTable" class="item-table">';
                 echo "<thead>";
                 echo "<tr>";
-                echo "<th onclick=\"sortTable(0)\" >Name</th>";
-                echo "<th onclick=\"sortTable(1)\">Subject</th>";
-                echo "<th onclick=\"sortTable(2)\">Category</th>";
-                echo "<th onclick=\"sortTable(3)\">Get date</th>";
-                echo "<th onclick=\"sortTable(4)\">Due date</th>";
+                echo "<th onclick=\"sortTable(0)\" title=\"click to sort table\">Name</th>";
+                echo "<th onclick=\"sortTable(1)\" title=\"click to sort table\">Subject</th>";
+                echo "<th onclick=\"sortTable(2)\" title=\"click to sort table\">Category</th>";
+                echo "<th onclick=\"sortTable(3)\" title=\"click to sort table\">Get date</th>";
+                echo "<th onclick=\"sortTable(4)\" title=\"click to sort table\">Due date</th>";
                 echo "</tr>";
                 echo "</thead>";
                 echo "<tbody>";
