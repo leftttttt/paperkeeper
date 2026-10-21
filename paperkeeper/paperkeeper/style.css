@@ -327,7 +327,7 @@ header {
   transform: scale(0.97);
 }
 
-.info.add-item-form
+.info.add-item-form,
 .info.edit-item-form {
   flex-direction: row;
   align-items: flex-start;

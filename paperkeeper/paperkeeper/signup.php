@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter a password.";
     } elseif (strlen(trim($_POST["password"])) < 6) {
-        $password_err = "Password must have atleast 6 characters.";
+        $password_err = "Password must have at least 6 characters.";
     } else {
         $password = trim($_POST["password"]);
     }
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["username"] = $username;
                 $_SESSION["email"] = $email;
 
-                header("location: userinfo.php");
+                header("location: index.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -145,19 +145,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <header>
-    <div class="navbar">
-        <div class="back">
-            <a href="index.php">
-                <button class="home" type="button">
-                    <span>Home</span>
-                </button>
-            </a>
+        <div class="navbar">
+            <div class="back">
+                <a href="index.php">
+                    <button class="home" type="button">
+                        <span>Home</span>
+                    </button>
+                </a>
+            </div>
+            <div class="title">
+                <h1>Please sign up</h1>
+            </div>
         </div>
-        <div class="title">
-            <h1>Please sign up</h1>
-        </div>
-    </div>
-</header>
+    </header>
     <form method="POST">
 
 
@@ -165,8 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="info">
             <div class="email">
                 <label for="email" style="color: #274c77;">Email:</label>
-                <input class="input" placeholder="Enter email" id="email" name="email"
-                    value="<?php echo $email; ?>">
+                <input class="input" placeholder="Enter email" id="email" name="email" value="<?php echo $email; ?>">
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $email_err; ?></span>
             </div>
             <br><br>

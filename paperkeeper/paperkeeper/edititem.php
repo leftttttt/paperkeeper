@@ -184,11 +184,11 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $category_err; ?></span>
                 <br>
                 <label for="get_date">Start Date</label>
-                <input type="datetime-local" id="get_date" name="get_date" <?php echo !empty($get_date) ? 'value="' . htmlspecialchars($get_date) . '"' : ''; ?>>
+                <input type="date" id="get_date" name="get_date" <?php echo !empty($get_date) ? 'value="' . htmlspecialchars($get_date) . '"' : ''; ?>>
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $get_date_err; ?></span>
                 <br>
                 <label for="due_date">Due Date (Optional)</label>
-                <input type="datetime-local" id="due_date" name="due_date" <?php echo !empty($due_date) ? 'value="' . htmlspecialchars($due_date) . '"' : ''; ?>>
+                <input type="date" id="due_date" name="due_date" <?php echo !empty($due_date) ? 'value="' . htmlspecialchars($due_date) . '"' : ''; ?>>
                 <br>
             </div>
         </div>

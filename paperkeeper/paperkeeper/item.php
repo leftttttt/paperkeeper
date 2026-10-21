@@ -83,7 +83,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         <p>Subject: <?php echo $row["subject"]; ?></p>
         <p>Category: <?php echo $row["category"]; ?></p>
         <p>Time you get: <?php echo $row["get_date"]; ?></p>
-        <p>due date: <?php echo $row["due_date"]; ?></p>
+        <p>Due date: <?php echo $row["due_date"]; ?></p>
 
         <br>
         <div class="buttons">
