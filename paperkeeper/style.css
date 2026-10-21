@@ -14,6 +14,7 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  position: relative;
   align-items: center;
   padding: 45px 25px 45px;
   border-bottom-style: solid;
@@ -30,10 +31,20 @@ body {
   padding: 12px;
 }
 
+.filter {
+  width: 100%;
+  margin-right: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+
 .filter select {
   width: 100%;
   border: none;
   outline: none;
+  color: #274c77;
+  background-color: #b7ccbe;
 }
 
 .home {
@@ -325,7 +336,7 @@ header {
   transform: scale(0.97);
 }
 
-.info.add-item-form
+.info.add-item-form,
 .info.edit-item-form {
   flex-direction: row;
   align-items: flex-start;
@@ -427,20 +438,69 @@ header {
   table-layout: fixed;
 }
 
-.item-table, td, th{
+.item-table,
+td,
+th {
   border: 3px solid #274c77;
-  
+
 }
 
-.item-table th{
+.item-table th {
   height: 20px;
   padding: 10px;
   font-size: 20px;
   color: #274c77;
 }
 
-.item-table td{
+.item-table td {
   height: 50px;
   font-size: 20px;
-    color: #274c77;
+  color: #274c77;
+}
+
+
+@media (max-width:950px) {
+
+  .title {
+    position: static;
+    transform: none;
+    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .headerbuttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-icon p {
+    display: none;
+  }
+
+  .filter {
+    width: 100%;
+    margin-right: 0;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .back {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 100;
+  }
+
+}
+
+@media (max-width:425px) {
+
+  .email label,
+  .username label,
+  .password label,
+  .repassword label {
+    display: block;
+    margin-bottom: 8px;
+  }
 }

@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty(trim($_POST["email"]))) {
         $email_err = "Please enter your email.";
+    } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+        $email_err = "Please enter a valid email address.";
     } else {
         $email = trim($_POST["email"]);
     }
@@ -72,21 +74,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<header>
-    <div class="navbar">
-        <div class="back">
-            <a href="index.php">
-                <button class="home" type="button">
-                    <span>Home</span>
-                </button>
-            </a>
-        </div>
-        <div class="title">
-            <h1>Choose your account - sign in</h1>
-        </div>
+    <header>
+        <div class="navbar">
+            <div class="back">
+                <a href="index.php">
+                    <button class="home" type="button">
+                        <span>Home</span>
+                    </button>
+                </a>
+            </div>
+            <div class="title">
+                <h1>Choose your account - sign in</h1>
+            </div>
 
-    </div>
-</header>
+        </div>
+    </header>
     <?php
     if (!empty($signin_err)) {
         echo '<div class="alert alert-danger">' . $signin_err . '</div>';
@@ -98,8 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="email">
                 <label for="email" style="color: #274c77;">Email:</label>
-                <input type="email" class="input" placeholder="Enter email" id="email" name="email"
-                    value="<?php echo $email; ?>">
+                <input class="input" placeholder="Enter email" id="email" name="email" value="<?php echo $email; ?>">
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $email_err; ?></span>
             </div>
             <br><br>

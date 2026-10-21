@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 $new_user_id = mysqli_insert_id($link);
                 $_SESSION["loggedin"] = true;
-                $_SESSION["id"] = $new_user_id;
+                $_SESSION["user_id"] = $new_user_id;
                 $_SESSION["username"] = $username;
                 $_SESSION["email"] = $email;
 
@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="acinfo">
             <div class="email">
                 <label for="email" style="color: #274c77;">Email:</label>
-                <input type="email" class="input" placeholder="Enter email" id="email" name="email"
+                <input class="input" placeholder="Enter email" id="email" name="email"
                     value="<?php echo $email; ?>">
                 <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $email_err; ?></span>
             </div>

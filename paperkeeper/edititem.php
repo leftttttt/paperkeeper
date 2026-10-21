@@ -48,14 +48,13 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $sql = "UPDATE item SET name=?, subject=?, category=?, get_date=?, due_date=? WHERE ID=?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "sssssi", $param_name, $param_subject, $param_category, $param_get_date, $param_due_date, $param_user_id);
+            mysqli_stmt_bind_param($stmt, "sssssi", $param_name, $param_subject, $param_category, $param_get_date, $param_due_date, $id);
 
             $param_name = $name;
             $param_subject = $subject;
             $param_category = $category;
             $param_get_date = $get_date;
             $param_due_date = $due_date;
-            $param_user_id = $_SESSION["user_id"];
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
@@ -101,7 +100,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $name = $row["name"];
                     $subject = $row["subject"];
                     $category = $row["category"];
-                    $get_date = $row["get_date"]; 
+                    $get_date = $row["get_date"];
+                    $due_date = $row["due_date"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: index.php");
@@ -154,57 +154,57 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         </div>
     </header>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-    <div class="info edit-item-form">
-        <div class="edit-item">
-            <label for="item-name">Item Name</label>
-            <input type="text" id="item-name" name="item-name" placeholder="Enter item name"
-                value="<?php echo $name; ?>">
-            <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $name_err; ?></span>
-            <br>
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
-                <option value="" selected>Please select subject</option>
-                <option value="physics" <?php echo ($subject === 'physics') ? 'selected' : ''; ?>>Physics</option>
-                <option value="math" <?php echo ($subject === 'math') ? 'selected' : ''; ?>>Math</option>
-                <option value="english" <?php echo ($subject === 'english') ? 'selected' : ''; ?>>English</option>
-                <option value="chinese" <?php echo ($subject === 'chinese') ? 'selected' : ''; ?>>Chinese</option>
-                <option value="digi tech" <?php echo ($subject === 'digi tech') ? 'selected' : ''; ?>>Digi Tech
-                </option>
-            </select>
-            <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $subject_err; ?></span>
-            <br>
-            <label for="category">Category</label>
-            <select id="category" name="category">
-                <option value="" selected>Please select category</option>
-                <option value="homework" <?php echo ($category === 'homework') ? 'selected' : ''; ?>>Homework</option>
-                <option value="quiz" <?php echo ($category === 'quiz') ? 'selected' : ''; ?>>Quiz</option>
-                <option value="test" <?php echo ($category === 'test') ? 'selected' : ''; ?>>Test</option>
-                <option value="note" <?php echo ($category === 'note') ? 'selected' : ''; ?>>Note</option>
-                <option value="other" <?php echo ($category === 'other') ? 'selected' : ''; ?>>Other</option>
-            </select>
-            <br>
-            <label for="get_date">Start Date</label>
-            <input type="datetime-local" id="get_date" name="get_date" <?php echo !empty($get_date) ? 'value="' . htmlspecialchars($get_date) . '"' : ''; ?>>
-            <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $get_date_err; ?></span>
-            <br>
-            <label for="due_date">Due Date (Optional)</label>
-            <input type="datetime-local" id="due_date" name="due_date" <?php echo !empty($due_date) ? 'value="' . htmlspecialchars($due_date) . '"' : ''; ?>>
-            <br>
+        <div class="info edit-item-form">
+            <div class="edit-item">
+                <label for="item-name">Item Name</label>
+                <input type="text" id="item-name" name="item-name" placeholder="Enter item name"
+                    value="<?php echo $name; ?>">
+                <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $name_err; ?></span>
+                <br>
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="" selected>Please select subject</option>
+                    <option value="Physics" <?php echo ($subject === 'Physics') ? 'selected' : ''; ?>>Physics</option>
+                    <option value="Math" <?php echo ($subject === 'Math') ? 'selected' : ''; ?>>Math</option>
+                    <option value="English" <?php echo ($subject === 'English') ? 'selected' : ''; ?>>English</option>
+                    <option value="Chinese" <?php echo ($subject === 'Chinese') ? 'selected' : ''; ?>>Chinese</option>
+                    <option value="Digi Tech" <?php echo ($subject === 'Digi Tech') ? 'selected' : ''; ?>>Digi Tech</option>
+                </select>
+                <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $subject_err; ?></span>
+                <br>
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="" selected>Please select category</option>
+                    <option value="Homework" <?php echo ($category === ' Homework') ? 'selected' : ''; ?>>Homework</option>
+                    <option value="Quiz" <?php echo ($category === 'Quiz') ? 'selected' : ''; ?>>Quiz</option>
+                    <option value="Test" <?php echo ($category === 'Test') ? 'selected' : ''; ?>>Test</option>
+                    <option value="Note" <?php echo ($category === 'Note') ? 'selected' : ''; ?>>Note</option>
+                    <option value="Other" <?php echo ($category === 'Other') ? 'selected' : ''; ?>>Other</option>
+                </select>
+                <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $category_err; ?></span>
+                <br>
+                <label for="get_date">Start Date</label>
+                <input type="date" id="get_date" name="get_date" <?php echo !empty($get_date) ? 'value="' . htmlspecialchars($get_date) . '"' : ''; ?>>
+                <span style="display: block; margin-top: 10px; color: #dc3545;"><?php echo $get_date_err; ?></span>
+                <br>
+                <label for="due_date">Due Date (Optional)</label>
+                <input type="date" id="due_date" name="due_date" <?php echo !empty($due_date) ? 'value="' . htmlspecialchars($due_date) . '"' : ''; ?>>
+                <br>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
+        <br>
+        <br>
+        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        <div class="buttons">
+            <button class="save" type="submit">
+                Save
+            </button>
 
-    <div class="buttons">
-        <button class="save" type="submit">
-            Save
-        </button>
-
-        <button class="cancel" type="button" onclick="location.href='index.php'">
-            Cancel
-        </button>
-    </div>
-    </div>
+            <button class="cancel" type="button" onclick="location.href='index.php'">
+                Cancel
+            </button>
+        </div>
+        </div>
 </body>
 
 </html>
