@@ -45,6 +45,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 <head>
     <meta charset="UTF-8">
     <title>Delete Record</title>
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="style.css">
     <style>
         .wrapper {
